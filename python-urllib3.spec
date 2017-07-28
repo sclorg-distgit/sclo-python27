@@ -137,7 +137,7 @@ ln -s ../../six.pyo %{buildroot}/%{python_sitelib}/urllib3/packages/six.pyo
 # symlink in that backports.ssl_match_hostname module.
 #   https://bugzilla.redhat.com/show_bug.cgi?id=1231381
 
-%if %{?with_python3}
+%if 0%{?with_python3}
 cp %{SOURCE1} %{buildroot}/%{python_sitelib}/urllib3/packages/ssl_match_hostname.py
 %else
 ln -s ../../backports/ssl_match_hostname %{buildroot}/%{python_sitelib}/urllib3/packages/ssl_match_hostname
