@@ -58,16 +58,16 @@ BuildRequires:  gcc
 BuildRequires:  gcc-c++
 %endif
 
-Requires:       %{scl_prefix}python-libs
+Requires:       %{?scl_prefix}python-libs
 
-Provides:       %{scl_prefix}Cython = %{?epoch:%{epoch}:}%{version}-%{release}
-Obsoletes:      %{scl_prefix}Cython < %{?epoch:%{epoch}:}%{version}-%{release}
-BuildRequires:  %{scl_prefix}python-devel
-BuildRequires:  %{scl_prefix}python-setuptools
+Provides:       %{?scl_prefix}Cython = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes:      %{?scl_prefix}Cython < %{?epoch:%{epoch}:}%{version}-%{release}
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
 %if %{with tests}
-BuildRequires:  %{scl_prefix}python-coverage
-BuildRequires:  %{scl_prefix}python-numpy
-BuildRequires:  %{scl_prefix}python-jedi
+BuildRequires:  %{?scl_prefix}python-coverage
+BuildRequires:  %{?scl_prefix}python-numpy
+BuildRequires:  %{?scl_prefix}python-jedi
 %endif
 
 %global _description \
